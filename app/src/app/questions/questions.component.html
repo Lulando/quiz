@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="questions" *ngIf="len > index">
+    <h4>{{ Questions[index].name }}</h4>
+    <button (click)="addAnimal()">ZWIERZ</button>
+    <button (click)="addPlant()">ROSLINA</button>
+  </div>
+  <div class="answers" *ngIf="index > 0">
+    <div>
+      <h3>ZWIERZE:</h3>
+      <div
+        class="animal"
+        *ngFor="let animal of answAnimals"
+        [className]="animal.correct ? 'corrClass' : 'notCorrClass'"
+      >
+        {{ animal.name }}
+      </div>
+    </div>
+    <div>
+      <h3>ROSLINY:</h3>
+      <div
+        class="plant"
+        *ngFor="let plant of answPlants"
+        [className]="plant.correct ? 'corrClass' : 'notCorrClass'"
+      >
+        {{ plant.name }}
+      </div>
+    </div>
+    <button (click)="check()" class="check" *ngIf="!(len > index)">
+      Sprawdz
+    </button>
+  </div>
+</div>
