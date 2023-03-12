@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { DbService } from '../services/db.service';
 import { Thing } from '../data/models';
 
@@ -14,25 +14,27 @@ export class QuestionsComponent {
   answAnimals: Thing[] = [];
   answPlants: Thing[] = [];
   len: number = this.Questions.length;
+  tempThing?: Thing;
+  checkClicked: boolean = false;
   index: number = 0;
 
   addAnimal() {
-    this.Questions[this.index].correct =
-      this.Questions[this.index].type === 'ZWIERZ' ? true : false;
+    this.tempThing = this.Questions[this.index];
+    this.tempThing.answer = 'ZWIERZ';
 
-    this.answAnimals.push(this.Questions[this.index]);
+    this.answAnimals.push(this.tempThing);
     if (this.index < this.len) this.index += 1;
   }
 
   addPlant() {
-    this.Questions[this.index].correct =
-      this.Questions[this.index].type === 'ROSLINA' ? true : false;
+    this.tempThing = this.Questions[this.index];
+    this.tempThing.answer = 'ROSLINA';
 
-    this.answPlants.push(this.Questions[this.index]);
+    this.answPlants.push(this.tempThing);
     if (this.index < this.len) this.index += 1;
   }
 
   check() {
-    
+    this.checkClicked = true;
   }
 }

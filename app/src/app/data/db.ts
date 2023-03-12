@@ -4,21 +4,31 @@ export const WORDS: Thing[] = [
   {
     type: 'ZWIERZ',
     name: 'Słoń',
-    correct: undefined,
+    answer: undefined,
   },
   {
     type: 'ZWIERZ',
     name: 'Lemur',
-    correct: undefined,
+    answer: undefined,
   },
   {
     type: 'ROSLINA',
     name: 'Sosna',
-    correct: undefined,
+    answer: undefined,
   },
   {
     type: 'ROSLINA',
     name: 'Róża',
-    correct: undefined,
+    answer: undefined,
+  },
+  {
+    type: 'ZWIERZ',
+    name: 'Szympans',
+    answer: undefined,
+  },
+  {
+    type: 'ROSLINA',
+    name: 'Lulek Czarny',
+    answer: undefined,
   },
 ];

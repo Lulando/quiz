@@ -1,1 +1,26 @@
-<p>answers works!</p>
+<div class="result">
+  <div>
+    <h3>ZWIERZE:</h3>
+    <div
+      class="thing animal"
+      *ngFor="let animal of answersAnimals"
+      [style.background-color]="
+        isAnswerCorrect(animal) ? corrColor : uncorrColor
+      "
+    >
+      {{ animal.name }}
+    </div>
+  </div>
+  <div>
+    <h3>ROSLINY:</h3>
+    <div
+      class="thing plant"
+      *ngFor="let plant of answersPlants"
+      [style.background-color]="
+        isAnswerCorrect(plant) ? corrColor : uncorrColor
+      "
+    >
+      {{ plant.name }}
+    </div>
+  </div>
+</div>
