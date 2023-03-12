@@ -17,4 +17,8 @@ export class AnswersComponent {
   isAnswerCorrect(target: Thing) {
     return target.answer == target.type;
   }
+
+  reloadPage() {
+    window.location.reload();
+  }
 }
